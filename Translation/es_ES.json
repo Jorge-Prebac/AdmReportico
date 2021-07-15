@@ -1,0 +1,8 @@
+{
+	"AdmReportico": "AdmReportico",
+	"delivery-note-customer": "AlbaranCliente",
+	"estimation-customer": "PresupuestoCliente",
+	"invoice-customer": "FacturaCliente",
+	"order-customer": "PedidoCliente",
+	"Reportico": "Reportico"
+}

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<view>
+    <columns>
+		<group name="basic" numcolumns="12">
+			<column name="type" title="type" order="120">
+				<widget type="select" fieldname="type" translate="true">
+					<values title="estimation-customer">PresupuestoCliente</values>
+					<values title="order-customer">PedidoCliente</values>
+					<values title="delivery-note-customer">AlbaranCliente</values>
+					<values title="invoice-customer">FacturaCliente</values>
+					<values title="project">Proyecto</values>
+				</widget>
+			</column>
+			<column name="file" title="file" order="110">
+				<widget type="text" fieldname="file"/>
+			</column>
+		</group>
+		<group name="obs" numcolumns="12">
+			<column name="note" display="right" order="120">
+				<widget type="text" fieldname="note"/>
+			</column>
+		</group>
+    </columns>
+	<rows>
+		<row type="actions">
+			<button type="link" icon= "fas fa-archway" label="Reportico" color="warning" action="http://localhost:8080/reportico6016/"/>
+		</row>
+	</rows>
+</view>
