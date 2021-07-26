@@ -40,5 +40,13 @@ class Init extends InitClass
     {
 		;
     }
-
+	
+	private function setupSettings()
+    {
+        $appsettings = $this->toolBox()->appSettings();
+        $urlReportico = $appsettings->get('admreportico', 'urlReportico');
+		
+        $appsettings->set('admreportico', 'urlReportico', $urlReportico);
+        $appsettings->save();
+    }
 }

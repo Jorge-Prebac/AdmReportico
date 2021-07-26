@@ -66,7 +66,7 @@ class ListPresupuestoCliente
 				if (file_exists($fileName1))
 				{	
 					$id = ('http://localhost:8080/reportico6016/index.php?option=com_reportico&printable_html=1')
-					.('&project=FacturaScripts&xmlin=InterAnualPresupAcept.xml&')
+					.('&project=FacturaScripts&xmlin=InterAnualPresupAcept.xml')
 					.('&execute_mode=PREPARE');
 					
 					$this->addButton($viewName, [
