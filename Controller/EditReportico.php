@@ -74,5 +74,15 @@ class EditReportico extends EditController
                 parent::loadData($viewName, $view);
                 break;
         }
+		
+		$urlReportico = $this->toolBox()->appSettings()->get('reportico', 'urlReportico');
+
+		$this->addButton($viewName, [
+			'action' => $urlReportico,
+			'color' => 'warning',
+			'icon' => 'fas fa-archway',
+			'label' => 'AdmReportico',
+			'type' => 'link'
+		]);
     }
 }

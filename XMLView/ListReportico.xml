@@ -19,9 +19,4 @@
 			</column>
 		</group>
     </columns>
-	<rows>
-		<row type="actions">
-			<button type="link" icon= "fas fa-archway" label="Reportico" color="warning" action="http://localhost:8080/reportico6016/"/>
-		</row>
-	</rows>
 </view>

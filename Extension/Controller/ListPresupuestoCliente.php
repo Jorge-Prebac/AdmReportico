@@ -53,6 +53,16 @@ class ListPresupuestoCliente
                 $where = [new DataBaseWhere('type', $type)];
                 $view->loadData('', $where);
 				
+			$urlReportico = $this->toolBox()->appSettings()->get('reportico', 'urlReportico');
+
+			$this->addButton($viewName, [
+				'action' => $urlReportico,
+				'color' => 'warning',
+				'icon' => 'fas fa-archway',
+				'label' => 'AdmReportico',
+				'type' => 'link'
+			]);
+				
 				$fileName1 = ($_SERVER['DOCUMENT_ROOT']
 					. DIRECTORY_SEPARATOR 
 					. 'reportico6016' 
@@ -64,7 +74,7 @@ class ListPresupuestoCliente
 					. 'InterAnualPresupAcept.xml');
 
 				if (file_exists($fileName1))
-				{	
+				{
 					$id = ('http://localhost:8080/reportico6016/index.php?option=com_reportico&printable_html=1')
 					.('&project=FacturaScripts&xmlin=InterAnualPresupAcept.xml')
 					.('&execute_mode=PREPARE');
