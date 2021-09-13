@@ -45,7 +45,7 @@ class ListReportico extends ListController
     {
         $this->createViewsAdmReportico();
     }
-	
+
 	/**
      * 
      * @param string $viewName
@@ -64,7 +64,7 @@ class ListReportico extends ListController
 			$this->setSettings($viewName, 'clickable', false);
 					
 		}
-		
+
 		$urlReportico = $this->toolBox()->appSettings()->get('reportico', 'urlReportico');
 
 		$this->addButton($viewName, [

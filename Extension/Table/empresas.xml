@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Document   : empresas.xml
+    Author     : Carlos Garcia Gomez
+    Description:
+        Structure for the empresas table.
+-->
+<table>
+    <column>
+        <name>pie_factura</name>
+        <type>text</type>
+    </column>
+</table>
