@@ -40,6 +40,14 @@ class EditPedidoCliente
 			{
 				$this->setSettings($viewName, 'clickable', false);
 			}
+			
+			$this->addButton($viewName, [
+					'action' => 'ok-informe',
+					'color' => 'warning',
+					'icon' => 'fas fa-check-double',
+					'label' => 'Ok Informe',
+					'type' => 'action'
+			]);
 		};
 	}
 
@@ -57,64 +65,66 @@ class EditPedidoCliente
 
 				$this->addButton($viewName, [
 					'action' => $urlReportico,
-					'color' => 'warning',
+					'color' => 'info',
 					'icon' => 'fas fa-archway',
 					'label' => 'AdmReportico',
 					'type' => 'link'
 				]);
-
-				$fileName1 = ($_SERVER['DOCUMENT_ROOT']
-					. DIRECTORY_SEPARATOR 
-					. 'reportico6016' 
-					. DIRECTORY_SEPARATOR 
-					. 'projects' 
-					. DIRECTORY_SEPARATOR 
-					. 'FacturaScripts' 
-					. DIRECTORY_SEPARATOR 
-					. 'PedidosClientes.xml');
-
-				if (file_exists($fileName1))
-				{	
-					$id = ($urlReportico).('index.php?option=com_reportico&printable_html=1')
-					.('&project=FacturaScripts&xmlin=PedidosClientes.xml&idpedido=')
-					.((int) $this->request->query->get('code'))
-					.('&execute_mode=PREPARE');
-					
-					$this->addButton($viewName, [
-					'action' => $id,
-					'color' => 'warning',
-					///'icon' => 'fas fa-archway',
-					'label' => 'Print-Pedido',
-					'type' => 'link'
-					]);
-				}
-
-				$fileName2 = ($_SERVER['DOCUMENT_ROOT']
-					. DIRECTORY_SEPARATOR 
-					. 'reportico6016' 
-					. DIRECTORY_SEPARATOR 
-					. 'projects' 
-					. DIRECTORY_SEPARATOR 
-					. 'FacturaScripts' 
-					. DIRECTORY_SEPARATOR 
-					. 'AnticiposPedidosCli.xml');
-
-				if (file_exists($fileName2))
-				{
-					$id = ($urlReportico).('index.php?option=com_reportico&printable_html=1')
-					.('&project=FacturaScripts&xmlin=AnticiposPedidosCli.xml&idpedido=')
-					.((int) $this->request->query->get('code'))
-					.('&execute_mode=PREPARE');
-					
-					$this->addButton($viewName, [
-					'action' => $id,
-					'color' => 'warning',
-					///'icon' => 'fas fa-archway',
-					'label' => 'Print-Anticipos',
-					'type' => 'link'
-					]);
-				}
 			}
 		};
     }
+
+	public function execAfterAction()
+	{
+		return function ($action)
+		{
+			if ($action === 'ok-informe')
+			{
+				$model = $this->views[$this->active]->model;
+				$description = $this->request->request->get('description', '');
+				$codes = $this->request->request->get('code', '');
+				if (empty($codes)) {
+
+					// no selected item
+					$this->toolBox()->i18nLog()->warning('no-selected-item');
+					
+				} elseif (\is_array($codes)) {
+
+					// detecting multiples rows
+					$numInformes = 0;
+					foreach ($codes as $cod)
+					{
+						if ($model->loadFromCode($cod))
+						{
+							++$numInformes;
+							continue;
+						}
+					}
+					if ($numInformes != 1)
+					{
+						$this->toolBox()->i18nLog()->warning('Has seleccionado = ' . $numInformes . ' elementos. Selecciona solo uno');
+						
+					} elseif ($numInformes === 1)
+					{
+						$urlReportico = $this->toolBox()->appSettings()->get('reportico', 'urlReportico');
+						$dirProjects = $this->getViewModelValue('ListReportico', 'dirProjects');
+						$file = $this->getViewModelValue('ListReportico', 'file');
+						
+						$id = 
+						( $urlReportico
+						. DIRECTORY_SEPARATOR
+						.('index.php?option=com_reportico&printable_html=1&project=')
+						. $dirProjects
+						. ('&xmlin=')
+						. $file
+						.('&execute_mode=PREPARE&')
+						.((int) $this->request->query->get('code'))
+						);
+						$this->toolBox()->i18nLog()->info("<a href='$id' target='_blank'>Haz clic y el informe ( $file ) se abrirá en otra pestaña del navegador</a>");
+					}
+				}
+				return false;
+			}
+		};
+	}
 }

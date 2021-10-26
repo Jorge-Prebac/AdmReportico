@@ -10,6 +10,10 @@
         <type>serial</type>
         <null>NO</null>
     </column>
+	<column>
+		<name>dirProjects</name>
+		<type>character varying(200)</type>
+	</column>
     <column>
         <name>file</name>
         <type>character varying(200)</type>

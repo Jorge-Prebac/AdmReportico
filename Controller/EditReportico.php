@@ -1,4 +1,5 @@
 <?php
+
 /**
  * This file is part of the AdmReportico plugin, with the Reportico engine, for FacturaScripts
  * Copyright (C) 2020 Carlos Garcia Gomez <carlos@facturascripts.com>
@@ -79,7 +80,7 @@ class EditReportico extends EditController
 
 		$this->addButton($viewName, [
 			'action' => $urlReportico,
-			'color' => 'warning',
+			'color' => 'info',
 			'icon' => 'fas fa-archway',
 			'label' => 'AdmReportico',
 			'type' => 'link'

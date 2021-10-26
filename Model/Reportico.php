@@ -40,6 +40,12 @@ class Reportico extends Base\ModelClass
      * 
      * @return string
      */
+	public $dirProjects;
+	
+	/**
+     * 
+     * @return string
+     */
     public $file;
 	
 	/**
@@ -73,3 +79,4 @@ class Reportico extends Base\ModelClass
     }
 
  }
+ 

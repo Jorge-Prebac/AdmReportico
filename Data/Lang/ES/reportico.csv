@@ -1,4 +1,4 @@
-id;file;note;type
-1;AnticiposPedidosCli.xml;Diseño para entregar al cliente un comprobante del anticipo a cuenta del pedido;PedidoCliente
-2;PedidosClientes.xml;Diseño para entregar al cliente un pedido de venta;PedidoCliente
-3;InterAnualPresupAcept.xml;Diseño para obtener estadísticas de presupuestos aceptados por unidades importes y gráfica;PresupuestoCliente
+id;file;note;type;dirProjects
+1;AnticiposPedidosCli.xml;Diseño para entregar al cliente un comprobante del anticipo a cuenta del pedido;PedidoCliente;FacturaScripts
+2;PedidosClientes.xml;Diseño para entregar al cliente un pedido de venta;PedidoCliente;FacturaScripts
+3;InterAnualPresupAcept.xml;Diseño para obtener estadísticas de presupuestos aceptados. Por unidades, importes y con gráfica;PresupuestoCliente;FacturaScripts

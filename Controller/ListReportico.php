@@ -69,7 +69,7 @@ class ListReportico extends ListController
 
 		$this->addButton($viewName, [
 			'action' => $urlReportico,
-			'color' => 'warning',
+			'color' => 'info',
 			'icon' => 'fas fa-archway',
 			'label' => 'AdmReportico',
 			'type' => 'link'

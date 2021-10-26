@@ -2,10 +2,16 @@
 <view>
     <columns>
 		<group name="basic" numcolumns="12">
-			<column name="id" title="id" order="110">
+			<column name="id" title="id" order="100">
 				<widget type="text" fieldname="id"/>
 			</column>
-			<column name="type" title="type" order="120">
+			<column name="dir" title="dir projects" order="110">
+				<widget type="text" fieldname="dirProjects"/>
+			</column>
+			<column name="file" title="file" order="120">
+				<widget type="text" fieldname="file"/>
+			</column>
+			<column name="type" title="type" order="130">
 				<widget type="select" fieldname="type" translate="true">
 					<values title="estimation-customer">PresupuestoCliente</values>
 					<values title="order-customer">PedidoCliente</values>
@@ -14,11 +20,8 @@
 					<values title="project">Proyecto</values>
 				</widget>
 			</column>
-			<column name="note" title="note" order="130">
+			<column name="note" title="note" order="140">
 				<widget type="text" fieldname="note"/>
-			</column>
-			<column name="file" title="file" order="110">
-				<widget type="text" fieldname="file"/>
 			</column>
 		</group>
     </columns>
