@@ -9,5 +9,4 @@
                 <widget type="text" fieldname="urlReportico" required="true" />
             </column>
         </group>
-    </columns>
-</view>
+    </columns></view>
