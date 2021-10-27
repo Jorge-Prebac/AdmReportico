@@ -1,8 +1,10 @@
 {
 	"AdmReportico": "AdmReportico",
 	"delivery-note-customer": "AlbaranCliente",
+	"dir projects": "dir proyectos",
 	"estimation-customer": "PresupuestoCliente",
 	"invoice-customer": "FacturaCliente",
+	"Ok Report": "Ok Informe",
 	"order-customer": "PedidoCliente",
 	"Reportico": "Reportico"
 }

@@ -1,8 +1,10 @@
 {
 	"AdmReportico": "AdmReportico",
 	"delivery-note-customer": "DeliveryNoteCustomer",
+	"dir projects": "dir projects",
 	"estimation-customer": "EstimationCustomer",
 	"invoice-customer": "InvoiceCustomer",
+	"Ok Report": "Ok Report",
 	"order-customer": "OrderCustomer",
 	"Reportico": "Reportico"
 }

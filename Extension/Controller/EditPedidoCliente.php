@@ -42,10 +42,10 @@ class EditPedidoCliente
 			}
 			
 			$this->addButton($viewName, [
-					'action' => 'ok-informe',
+					'action' => 'ok-report',
 					'color' => 'warning',
 					'icon' => 'fas fa-check-double',
-					'label' => 'Ok Informe',
+					'label' => 'Ok Report',
 					'type' => 'action'
 			]);
 		};
@@ -78,7 +78,7 @@ class EditPedidoCliente
 	{
 		return function ($action)
 		{
-			if ($action === 'ok-informe')
+			if ($action === 'ok-report')
 			{
 				$model = $this->views[$this->active]->model;
 				$description = $this->request->request->get('description', '');
