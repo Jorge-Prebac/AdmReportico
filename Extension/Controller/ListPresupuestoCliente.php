@@ -113,12 +113,13 @@ class ListPresupuestoCliente
 						$id = 
 						( $urlReportico
 						. DIRECTORY_SEPARATOR
-						.('index.php?option=com_reportico&printable_html=1&project=')
+						. ('index.php?option=com_reportico&printable_html=1&project=')
 						. $dirProjects
 						. ('&xmlin=')
 						. $file
-						.('&execute_mode=PREPARE&')
-						.((int) $this->request->query->get('code'))
+						. ('&execute_mode=PREPARE&')
+						. ('&iddoc=')
+						. ((int) $this->request->query->get('code'))
 						);
 						$this->toolBox()->i18nLog()->info("<a href='$id' target='_blank'>Haz clic y el informe ( $file ) se abrirá en otra pestaña del navegador</a>");
 					}
