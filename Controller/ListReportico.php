@@ -72,6 +72,7 @@ class ListReportico extends ListController
 			'color' => 'info',
 			'icon' => 'fas fa-archway',
 			'label' => 'AdmReportico',
+			'target' => '_blank',
 			'type' => 'link'
 		]);
     }

@@ -30,14 +30,12 @@ class ListPresupuestoCliente
 {
 	public function createViews()
 	{
-		return function()
-		{
+		return function() {
 			$viewName = 'ListReportico';
 			$this->addView($viewName,'Reportico','Reportico','fas fa-archway');
 			$this->views[$viewName]->addOrderBy(['type'], 'type');
 			
-			if (false == $this->user->admin)
-			{
+			if (false == $this->user->admin) {
 				$this->setSettings($viewName, 'clickable', false);
 			}
 			
@@ -53,10 +51,8 @@ class ListPresupuestoCliente
 
     public function loadData()
 	{
-        return function($viewName, $view)
-		{
-            if ($viewName === 'ListReportico')
-			{
+        return function($viewName, $view) {
+            if ($viewName === 'ListReportico') {
 				$type = "PresupuestoCliente";
                 $where = [new DataBaseWhere('type', $type)];
                 $view->loadData('', $where);
@@ -68,6 +64,7 @@ class ListPresupuestoCliente
 					'color' => 'info',
 					'icon' => 'fas fa-archway',
 					'label' => 'AdmReportico',
+					'target' => '_blank',
 					'type' => 'link'
 				]);
 			}
@@ -76,12 +73,9 @@ class ListPresupuestoCliente
 
 	public function execAfterAction()
 	{
-		return function ($action)
-		{
-			if ($action === 'ok-report')
-			{
+		return function ($action) {
+			if ($action === 'ok-report') {
 				$model = $this->views[$this->active]->model;
-				$description = $this->request->request->get('description', '');
 				$codes = $this->request->request->get('code', '');
 				if (empty($codes)) {
 
@@ -92,20 +86,16 @@ class ListPresupuestoCliente
 
 					// detecting multiples rows
 					$numInformes = 0;
-					foreach ($codes as $cod)
-					{
-						if ($model->loadFromCode($cod))
-						{
+					foreach ($codes as $cod) {
+						if ($model->loadFromCode($cod)) {
 							++$numInformes;
 							continue;
 						}
 					}
-					if ($numInformes != 1)
-					{
-						$this->toolBox()->i18nLog()->warning('Has seleccionado = ' . $numInformes . ' elementos. Selecciona solo uno');
+					if ($numInformes != 1) {
+						$this->toolBox()->i18nlog()->warning('Has seleccionado ' . $numInformes . ' informes. Selecciona solo uno');
 						
-					} elseif ($numInformes === 1)
-					{
+					} elseif ($numInformes === 1) {
 						$urlReportico = $this->toolBox()->appSettings()->get('reportico', 'urlReportico');
 						$dirProjects = $this->getViewModelValue('ListReportico', 'dirProjects');
 						$file = $this->getViewModelValue('ListReportico', 'file');
@@ -117,11 +107,11 @@ class ListPresupuestoCliente
 						. $dirProjects
 						. ('&xmlin=')
 						. $file
-						. ('&execute_mode=PREPARE&')
+						. ('&execute_mode=PREPARE')
 						. ('&iddoc=')
 						. ((int) $this->request->query->get('code'))
 						);
-						$this->toolBox()->i18nLog()->info("<a href='$id' target='_blank'>Haz clic y el informe ( $file ) se abrirá en otra pestaña del navegador</a>");
+						$this->toolBox()->i18nLog()->info("<a href='$id' target='_blank'> Haz clic y el informe ( " . $file . " ) se abrirá en otra pestaña del navegador <i class='fas fa-external-link-alt'></i> </a>");
 					}
 				}
 				return false;

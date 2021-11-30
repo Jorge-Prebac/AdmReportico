@@ -61,8 +61,7 @@ class EditReportico extends EditController
      */
     protected function loadData($viewName, $view)
 	{
-        switch ($viewName) 
-		{
+        switch ($viewName) {
 			
 			case 'EditReportico':
                 parent::loadData($viewName, $view);
@@ -83,6 +82,7 @@ class EditReportico extends EditController
 			'color' => 'info',
 			'icon' => 'fas fa-archway',
 			'label' => 'AdmReportico',
+			'target' => '_blank',
 			'type' => 'link'
 		]);
     }
