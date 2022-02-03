@@ -93,7 +93,7 @@ class EditPedidoCliente
 						}
 					}
 					if ($numInformes != 1) {
-						$this->toolBox()->i18nlog()->warning('Has seleccionado ' . $numInformes . ' informes. Selecciona solo uno');
+						$this->toolBox()->i18nlog()->warning('select-only-1-report');
 						
 					} elseif ($numInformes === 1) {
 						$urlReportico = $this->toolBox()->appSettings()->get('reportico', 'urlReportico');
@@ -111,7 +111,8 @@ class EditPedidoCliente
 						. ('&iddoc=')
 						. ((int) $this->request->query->get('code'))
 						);
-						$this->toolBox()->i18nLog()->info("<a href='$id' target='_blank'> Haz clic y el informe ( " . $file . " ) se abrirá en otra pestaña del navegador <i class='fas fa-external-link-alt'></i> </a>");
+						$this->toolBox()->i18nLog()->info('external-link');
+						$this->toolBox()->i18nLog()->info("<a href='$id' target='_blank'> " . $file . " <i class='fas fa-external-link-alt'></i> </a>");
 					}
 				}
 				return false;
