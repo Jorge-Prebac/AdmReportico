@@ -1,12 +1,12 @@
 {
-	"AdmReportico": "AdmReportico",
+	"admReportico": "AdmReportico",
 	"delivery-note-customer": "AlbaranCliente",
 	"dir projects": "dir proyectos",
 	"estimation-customer": "PresupuestoCliente",
 	"external-link": "Haz Clic y el informe se abrirá en una nueva página del navegador",
 	"invoice-customer": "FacturaCliente",
-	"Ok Report": "Ok Informe",
+	"ok Report": "Ok Informe",
 	"order-customer": "PedidoCliente",
-	"Reportico": "Reportico",
-	"select-only-1-report": "Selecciona solo 1 informe "
+	"reportico": "Reportico",
+	"select-only-1-report": "Selecciona solo 1 informe"
 }
