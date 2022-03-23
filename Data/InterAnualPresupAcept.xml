@@ -8,11 +8,10 @@ SUM(presupuestoscli.neto) neto,
 YEAR(presupuestoscli.fecha) any,
 MONTH(presupuestoscli.fecha) mes
 
-FROM presupuestoscli, divisas, doctransformations doctransf
+FROM presupuestoscli, divisas
 
-WHERE presupuestoscli.coddivisa = divisas.coddivisa
-
-AND doctransf.iddoc1= presupuestoscli.idpresupuesto
+WHERE exists (select doctransformations.iddoc1 from doctransformations where presupuestoscli.idpresupuesto = doctransformations .iddoc1)
+AND presupuestoscli.coddivisa = divisas.coddivisa
 AND presupuestoscli.fecha &gt; '20161231'
 AND presupuestoscli.fecha &gt;= date_sub(curdate(), interval 72 month)
 
