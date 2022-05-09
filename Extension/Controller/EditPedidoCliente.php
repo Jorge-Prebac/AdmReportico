@@ -28,7 +28,7 @@ use FacturaScripts\Core\Base\DataBase\DataBaseWhere;
 
 class EditPedidoCliente
 {
-	public function createViews()
+	public function createViews(): Closure
 	{
         return function() {
 			$viewName = 'ListReportico';
@@ -49,7 +49,7 @@ class EditPedidoCliente
 		};
 	}
 
-    public function loadData()
+    public function loadData(): Closure
 	{
         return function($viewName, $view) {
             if ($viewName === 'ListReportico') {
