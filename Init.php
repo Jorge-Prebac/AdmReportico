@@ -1,7 +1,7 @@
 <?php
 /**
  * This file is part of the AdmReportico plugin, with the Reportico engine, for FacturaScripts
- * Copyright (C) 2022 Carlos Garcia Gomez <carlos@facturascripts.com>
+ * Copyright (C) 2020 Carlos Garcia Gomez <carlos@facturascripts.com>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Lesser General Public License as
@@ -23,7 +23,7 @@ use FacturaScripts\Core\Base\InitClass;
 use FacturaScripts\Dinamic\Model\Cliente;
 
 /**
- * Description of Init
+ * Description of Init of AdmReportico
  *
  * @author Jorge-Prebac <info@prebac.com>
  */
@@ -34,19 +34,20 @@ class Init extends InitClass
     {
 		$this->loadExtension(new Extension\Controller\EditPedidoCliente());
 		$this->loadExtension(new Extension\Controller\ListPresupuestoCliente());
+		$this->loadExtension(new Extension\Controller\ListAlbaranCliente());
     }
 	
 	public function update()
     {
-		$this->setupSettings();
+		;
     }
 	
 	private function setupSettings()
     {
         $appsettings = $this->toolBox()->appSettings();
-        if (empty($appsettings->get('admreportico', 'urlReportico'))) {
-			$appsettings->set('admreportico', 'urlReportico', $urlReportico);
-		}
+        $urlReportico = $appsettings->get('admreportico', 'urlReportico');
+		
+        $appsettings->set('admreportico', 'urlReportico', $urlReportico);
         $appsettings->save();
     }
 }

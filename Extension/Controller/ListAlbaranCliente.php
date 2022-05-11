@@ -19,20 +19,21 @@
 namespace FacturaScripts\Plugins\AdmReportico\Extension\Controller;
 
 use FacturaScripts\Core\Base\DataBase\DataBaseWhere;
+use Closure;
 
 /**
- * Description of EditPedidoCliente
+ * Description of ListAlbaranCliente
  *
  * @author Jorge-Prebac <info@prebac.com>
  */
-
-class EditPedidoCliente
+ 
+class ListAlbaranCliente
 {
 	public function createViews()
 	{
-        return function() {
+		return function() {
 			$viewName = 'ListReportico';
-			$this->addListView($viewName,'Reportico','Reportico','fas fa-archway');
+			$this->addView($viewName,'Reportico','Reportico','fas fa-archway');
 			$this->views[$viewName]->addOrderBy(['type'], 'type');
 			
 			if (false == $this->user->admin) {
@@ -53,7 +54,7 @@ class EditPedidoCliente
 	{
         return function($viewName, $view) {
             if ($viewName === 'ListReportico') {
-				$type = "EditPedidoCliente";
+				$type = $this->getMainViewName();
                 $where = [new DataBaseWhere('type', $type)];
                 $view->loadData('', $where);
 				

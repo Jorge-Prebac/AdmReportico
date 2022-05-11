@@ -53,7 +53,7 @@ class ListPresupuestoCliente
 	{
         return function($viewName, $view) {
             if ($viewName === 'ListReportico') {
-				$type = "PresupuestoCliente";
+				$type = $this->getMainViewName();
                 $where = [new DataBaseWhere('type', $type)];
                 $view->loadData('', $where);
 				
