@@ -1,12 +1,8 @@
 {
 	"admReportico": "AdmReportico",
-	"delivery-note-customer": "AlbaràClient",
 	"dir projects": "dir projectes",
-	"estimation-customer": "PressupostClient",
 	"external-link": "Fes Clic i l'informe s'obrirà en una pàgina nova del navegador",
-	"invoice-customer": "FacturaClient",
 	"ok Report": "Ok Informe",
-	"order-customer": "ComandaClient",
 	"reportico": "Reportico",
 	"select-only-1-report": "Selecciona només 1 informe"
 }

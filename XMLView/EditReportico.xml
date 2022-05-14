@@ -9,13 +9,7 @@
 				<widget type="text" fieldname="file"/>
 			</column>
 			<column name="type" title="type" order="130">
-				<widget type="select" fieldname="type" translate="true">
-					<values title="estimation-customer">PresupuestoCliente</values>
-					<values title="order-customer">PedidoCliente</values>
-					<values title="delivery-note-customer">AlbaranCliente</values>
-					<values title="invoice-customer">FacturaCliente</values>
-					<values title="project">Proyecto</values>
-				</widget>
+				<widget type="text" fieldname="type"/>
 			</column>
 		</group>
 		<group name="obs" numcolumns="12">

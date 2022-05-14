@@ -1,12 +1,8 @@
 {
 	"admReportico": "AdmReportico",
-	"delivery-note-customer": "DeliveryNoteCustomer",
 	"dir projects": "dir projects",
-	"estimation-customer": "EstimationCustomer",
 	"external-link": "Click and the report will open in a new browser page",
-	"invoice-customer": "InvoiceCustomer",
 	"ok Report": "Ok Report",
-	"order-customer": "OrderCustomer",
 	"reportico": "Reportico",
 	"select-only-1-report": "Select only 1 report"
 }

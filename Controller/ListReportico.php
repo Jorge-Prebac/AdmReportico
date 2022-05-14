@@ -57,12 +57,10 @@ class ListReportico extends ListController
         $this->addOrderBy($viewName, ['type'], 'type');
 
         ///Filtros
-        $this->addFilterAutocomplete($viewName, 'type', 'type', 'type', 'AdmReportico', 'type');
-		
+        $this->addFilterAutocomplete($viewName, 'typesC', 'type', 'type', 'reportico', 'type', 'type');
+
 		if (false == $this->user->admin) {
-					
 			$this->setSettings($viewName, 'clickable', false);
-					
 		}
 
 		$urlReportico = $this->toolBox()->appSettings()->get('reportico', 'urlReportico');
