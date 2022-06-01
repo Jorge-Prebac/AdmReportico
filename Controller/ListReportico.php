@@ -33,7 +33,7 @@ class ListReportico extends ListController
      *
      * @return array
      */
-    public function getPageData()
+    public function getPageData(): array
     {
         $data = parent::getPageData();
         $data['menu'] = 'reports';

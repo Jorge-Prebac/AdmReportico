@@ -18,8 +18,8 @@
  */
 namespace FacturaScripts\Plugins\AdmReportico\Extension\Controller;
 
-use FacturaScripts\Core\Base\DataBase\DataBaseWhere;
 use Closure;
+use FacturaScripts\Core\Base\DataBase\DataBaseWhere;
 
 /**
  * Description of ListAlbaranCliente
@@ -29,7 +29,7 @@ use Closure;
  
 class ListAlbaranCliente
 {
-	public function createViews()
+	public function createViews(): Closure
 	{
 		return function() {
 			$viewName = 'ListReportico';
@@ -50,7 +50,7 @@ class ListAlbaranCliente
 		};
 	}
 
-    public function loadData()
+    public function loadData(): Closure
 	{
         return function($viewName, $view) {
             if ($viewName === 'ListReportico') {

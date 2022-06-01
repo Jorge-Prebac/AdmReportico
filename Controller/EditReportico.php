@@ -35,7 +35,7 @@ class EditReportico extends EditController
      * 
      * @return string
      */
-    public function getModelClassName()
+    public function getModelClassName(): string
     {
         return 'Reportico';
     }
@@ -45,7 +45,7 @@ class EditReportico extends EditController
      *
      * @return array
      */
-    public function getPageData()
+    public function getPageData(): array
     {
         $data = parent::getPageData();
         $data['menu'] = 'reports';
