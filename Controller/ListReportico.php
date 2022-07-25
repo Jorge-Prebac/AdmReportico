@@ -53,11 +53,8 @@ class ListReportico extends ListController
     protected function createViewsAdmReportico($viewName = 'ListReportico')
     {
         $this->addView($viewName, 'Reportico', 'AdmReportico' ,'fas fa-archway');
-        $this->addSearchFields($viewName, [ 'type'],'type');
+        $this->addSearchFields($viewName, ['dirProjects', 'file', 'note', 'type']);
         $this->addOrderBy($viewName, ['type'], 'type');
-
-        ///Filtros
-        $this->addFilterAutocomplete($viewName, 'typesC', 'type', 'type', 'reportico', 'type', 'type');
 
 		if (false == $this->user->admin) {
 			$this->setSettings($viewName, 'clickable', false);
