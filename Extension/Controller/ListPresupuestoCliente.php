@@ -34,6 +34,7 @@ class ListPresupuestoCliente
 		return function() {
 			$viewName = 'ListReportico';
 			$this->addView($viewName,'Reportico','Reportico','fas fa-archway');
+			$this->addSearchFields($viewName, ['dirProjects', 'file', 'note', 'type']);
 			$this->views[$viewName]->addOrderBy(['type'], 'type');
 			
 			if (false == $this->user->admin) {

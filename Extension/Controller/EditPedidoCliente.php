@@ -34,6 +34,7 @@ class EditPedidoCliente
         return function() {
 			$viewName = 'ListReportico';
 			$this->addListView($viewName,'Reportico','Reportico','fas fa-archway');
+			$this->views[$viewName]->addSearchFields(['dirProjects', 'file', 'note', 'type']);
 			$this->views[$viewName]->addOrderBy(['type'], 'type');
 			
 			if (false == $this->user->admin) {
