@@ -5,7 +5,7 @@
             <column name="name" display="none" order="0">
                 <widget type="text" fieldname="name" readonly="true" required="true" />
         	</column>
-			<column name="urlReportico" numcolumns="3" order="100">
+			<column name="urlReportico" description="url a reportico (http://LoQueSea ó https://LoQueSea)" numcolumns="3" order="100">
                 <widget type="text" fieldname="urlReportico" required="true" />
             </column>
         </group>
