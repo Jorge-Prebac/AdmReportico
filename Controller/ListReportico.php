@@ -41,9 +41,10 @@ class ListReportico extends ListController
         $data['icon'] = 'fas fa-archway';
         return $data;
     }
+
     protected function createViews()
     {
-        $this->createViewsAdmReportico();
+		$this->createViewsAdmReportico();
     }
 
 	/**

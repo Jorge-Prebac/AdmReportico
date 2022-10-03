@@ -29,9 +29,23 @@ use FacturaScripts\Core\Base\DataBase\DataBaseWhere;
 
 class EditPedidoCliente
 {
-	public function createViews(): Closure
-	{
-        return function() {
+	protected function createViews(): Closure
+    {
+         return function() {
+			if ($this->user->can('ListReportico')) {
+				//el usuario tiene acceso
+				$this->createViewsAdmReportico();
+			}
+		};
+    }
+
+	/**
+     * 
+     * @param string $viewName
+     */
+    protected function createViewsAdmReportico($viewName = 'ListReportico')
+    {
+		return function() {
 			$viewName = 'ListReportico';
 			$this->addListView($viewName,'Reportico','Reportico','fas fa-archway');
 			$this->views[$viewName]->addSearchFields(['dirProjects', 'file', 'note', 'type']);

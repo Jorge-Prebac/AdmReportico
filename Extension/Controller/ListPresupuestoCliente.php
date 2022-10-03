@@ -29,8 +29,22 @@ use FacturaScripts\Core\Base\DataBase\DataBaseWhere;
  
 class ListPresupuestoCliente
 {
-	public function createViews(): Closure
-	{
+	protected function createViews(): Closure
+    {
+         return function() {
+			if ($this->user->can('ListReportico')) {
+				//el usuario tiene acceso
+				$this->createViewsAdmReportico();
+			}
+		};
+    }
+
+	/**
+     * 
+     * @param string $viewName
+     */
+    protected function createViewsAdmReportico($viewName = 'ListReportico')
+    {
 		return function() {
 			$viewName = 'ListReportico';
 			$this->addView($viewName,'Reportico','Reportico','fas fa-archway');
