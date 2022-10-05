@@ -8,7 +8,7 @@
 			<column name="file" title="file" order="120">
 				<widget type="text" fieldname="file"/>
 			</column>
-			<column name="type" title="type"  translate="false" order="130">
+			<column name="type" title="type" order="130">
 				<widget type="text" fieldname="type"/>
 			</column>
 			<column name="note" title="note" order="140">
