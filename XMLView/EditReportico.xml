@@ -2,18 +2,18 @@
 <view>
     <columns>
 		<group name="basic" numcolumns="12">
-			<column name="dir" title="dir projects" description="Nos sirve para organizar los informes en diferentes Proyectos" order="110">
+			<column name="dir" title="dir projects" description="organize-reports" order="110">
 				<widget type="text" fieldname="dirProjects"/>
 			</column>
-			<column name="file" title="file" description="Archivo del informe en formato XML" order="120">
+			<column name="file" title="file" description="report-file" order="120">
 				<widget type="text" fieldname="file"/>
 			</column>
-			<column name="type" title="type" description="Controlador desde donde se lanzará el informe" order="130">
+			<column name="type" title="type" description="controller-report-launched" order="130">
 				<widget type="text" fieldname="type"/>
 			</column>
 		</group>
 		<group name="obs" numcolumns="12">
-			<column name="note" display="right" description="Descripción resumida del informe" order="110">
+			<column name="note" display="right" description="summary-description" order="110">
 				<widget type="text" fieldname="note"/>
 			</column>
 		</group>
