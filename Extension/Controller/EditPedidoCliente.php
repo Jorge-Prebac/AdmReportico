@@ -59,7 +59,8 @@ class EditPedidoCliente
 					'action' => 'ok-report',
 					'color' => 'warning',
 					'icon' => 'fas fa-check-double',
-					'label' => 'Ok Report',
+					'label' => 'ok-report',
+					'title' => 'select-only-1-report',
 					'type' => 'action'
 			]);
 		};
@@ -79,7 +80,8 @@ class EditPedidoCliente
 					'action' => $urlReportico,
 					'color' => 'info',
 					'icon' => 'fas fa-archway',
-					'label' => 'AdmReportico',
+					'label' => 'adm-reportico',
+					'title' => 'open-new-pag',
 					'target' => '_blank',
 					'type' => 'link'
 				]);

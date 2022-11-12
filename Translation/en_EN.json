@@ -1,13 +1,14 @@
 {
-	"admReportico": "AdmReportico",
-	"controller-report-launched": "Controller from where the report will be launched",
-	"dir projects": "dir projects",
-	"external-link": "Click and the report will open in a new browser page",
-	"ok Report": "Ok Report",
-	"organize-reports": "It helps us to organize the reports in different projects",
-	"report-file": "Report file in XML format",
-	"reportico": "Reportico",
-	"select-only-1-report": "Select only 1 report",
-	"summary-description": "Summary description of the report",
-	"url-to-reportico":"url to Reportico(http://WhatEver or https://WhatEver)"
+    "adm-reportico": "AdmReportico",
+    "controller-report-launched": "Controller from where the report will be launched",
+    "dir-projects": "dir projects",
+    "external-link": "Click and the report will open in a new browser page",
+    "ok-report": "Ok Report",
+    "open-new-pag": "Reportico will open in a new browser page",
+    "organize-reports": "It helps us to organize the reports in different projects",
+    "report-file": "Report file in XML format",
+    "reportico": "Reportico",
+    "select-only-1-report": "Select only 1 report",
+    "summary-description": "Summary description of the report",
+    "url-to-reportico": "url to Reportico(http:\/\/WhatEver or https:\/\/WhatEver)"
 }

@@ -67,7 +67,8 @@ class ListReportico extends ListController
 			'action' => $urlReportico,
 			'color' => 'info',
 			'icon' => 'fas fa-archway',
-			'label' => 'AdmReportico',
+			'label' => 'adm-reportico',
+			'title' => 'open-new-pag',
 			'target' => '_blank',
 			'type' => 'link'
 		]);

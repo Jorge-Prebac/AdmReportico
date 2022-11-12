@@ -30,49 +30,28 @@ class Reportico extends Base\ModelClass
 {
     use Base\ModelTrait;
 	
-	/**
-     *
-     * @var integer
-     */
+	/** @var integer */
     public $id;
 	
-	/**
-     * 
-     * @return string
-     */
+	/** @return string */
 	public $dirProjects;
 	
-	/**
-     * 
-     * @return string
-     */
+	/** @return string */
     public $file;
 	
-	/**
-     * 
-     * @return string
-     */
+	/** @return string */
     public $note;
 	
-	/**
-     * 
-     * @return string
-     */
+	/** @return string */
     public $type;
 	   
-	/**
-     * 
-     * @return string
-     */
+	/** @return string */
     public static function primaryColumn(): string
 	{
         return 'id';
     }
     
-	/**
-     * 
-     * @return string
-     */
+	/** @return string */
     public static function tableName(): string
 	{
         return 'reportico';

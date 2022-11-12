@@ -1,13 +1,14 @@
 {
-	"admReportico": "AdmReportico",
-	"controller-report-launched":"Controlador des d'on es llançarà l'informe",
-	"dir projects": "dir projectes",
-	"external-link": "Fes Clic i l'informe s'obrirà en una pàgina nova del navegador",
-	"ok Report": "Ok Informe",
-	"organize-reports": "Ens ajuda a organitzar els informes en diferents projectes",
-	"report-file": "Fitxer de l'informe en format XML",
-	"reportico": "Reportico",
-	"select-only-1-report": "Selecciona només 1 informe",
-	"summary-description": "Descripció resumida de l'informe",
-	"url-to-reportico": "url a Reportico (http://ElQueSigui o https://ElQueSigui)"
+    "adm-reportico": "AdmReportico",
+    "controller-report-launched": "Controlador des d'on es llançarà l'informe",
+    "dir-projects": "dir projectes",
+    "external-link": "Fes Clic i l'informe s'obrirà en una pàgina nova del navegador",
+    "ok-report": "Ok Informe",
+    "open-new-pag": "Reportico s'obrirà en una pàgina nova del navegador",
+    "organize-reports": "Ens ajuda a organitzar els informes en diferents projectes",
+    "report-file": "Fitxer de l'informe en format XML",
+    "reportico": "Reportico",
+    "select-only-1-report": "Selecciona només 1 informe",
+    "summary-description": "Descripció resumida de l'informe",
+    "url-to-reportico": "url a Reportico (http:\/\/ElQueSigui o https:\/\/ElQueSigui)"
 }
