@@ -1,0 +1,14 @@
+{
+    "adm-reportico": "AdmReportico",
+    "controller-report-launched": "Txostena abiaraziko duen kontrolatzailea",
+    "dir-projects": "Proiektuen direktorioa",
+    "external-link": "Egin klik eta txostena nabigatzaileko orri berri batean irekiko da",
+    "ok-report": "Txostena Ok",
+    "open-new-pag": "Reportico nabilgatzaileko orri berri batean irekiko da",
+    "organize-reports": "Txostenak hainbat proiektutan antolatzen laguntzen digu",
+    "report-file": "Txostenaren artxiboa XML formatuan",
+    "reportico": "Reportico",
+    "select-only-1-report": "Txosten bakarra hautatu",
+    "summary-description": "Txostenaren deskribapen laburra",
+    "url-to-reportico": "Reportico-rako url-a (http:\/\/LoQueSea edo https:\/\/LoQueSea)"
+}

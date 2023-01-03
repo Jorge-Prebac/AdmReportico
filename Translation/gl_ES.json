@@ -1,0 +1,14 @@
+{
+    "adm-reportico": "AdmReportico",
+    "controller-report-launched": "Controlador desde onde se lanzará o informe",
+    "dir-projects": "dir proxectos",
+    "external-link": "Fai Clic e o informe abrirase nunha nova páxina do navegador",
+    "ok-report": "Ok Informe",
+    "open-new-pag": "Reportico abrirase nunha nova páxina do navegador",
+    "organize-reports": "Axúdanos a organizar os informes en diferentes proxectos",
+    "report-file": "Arquivo do informe en formato XML",
+    "reportico": "Reportico",
+    "select-only-1-report": "Selecciona só 1 informe",
+    "summary-description": "Descrición resumida do informe",
+    "url-to-reportico": "url a Reportico (http:\/\/LoQueSea ó https:\/\/LoQueSea)"
+}
