@@ -20,121 +20,25 @@ namespace FacturaScripts\Plugins\AdmReportico\Extension\Controller;
 
 use Closure;
 use FacturaScripts\Core\Base\DataBase\DataBaseWhere;
+use FacturaScripts\Plugins\AdmReportico\Extension\Traits\LaunchReports;
 
 /**
  * Description of EditPedidoCliente
  *
  * @author Jorge-Prebac <info@prebac.com>
  */
-
 class EditPedidoCliente
 {
-	protected function createViews(): Closure
-    {
-         return function() {
-			if ($this->user->can('ListReportico')) {
-				//el usuario tiene acceso
-				$this->createViewsAdmReportico();
-			}
-		};
-    }
-
-	/**
-     * 
-     * @param string $viewName
-     */
-    protected function createViewsAdmReportico($viewName = 'ListReportico')
-    {
-		return function() {
-			$viewName = 'ListReportico';
-			$this->addListView($viewName,'Reportico','Reportico','fas fa-archway');
-			$this->views[$viewName]->addSearchFields(['dirProjects', 'file', 'note', 'type']);
-			$this->views[$viewName]->addOrderBy(['type'], 'type');
-			
-			if (false == $this->user->admin) {
-				$this->setSettings($viewName, 'clickable', false);
-			}
-			
-			$this->addButton($viewName, [
-					'action' => 'ok-report',
-					'color' => 'warning',
-					'icon' => 'fas fa-check-double',
-					'label' => 'ok-report',
-					'title' => 'select-only-1-report',
-					'type' => 'action'
-			]);
-		};
-	}
+	use LaunchReports;
 
     public function loadData(): Closure
 	{
         return function($viewName, $view) {
             if ($viewName === 'ListReportico') {
-				$type = "EditPedidoCliente";
-                $where = [new DataBaseWhere('type', $type)];
+				$typeVista = "EditPedidoCliente";
+				$where = [new DataBaseWhere('type', $typeVista)];
                 $view->loadData('', $where);
-				
-				$urlReportico = $this->toolBox()->appSettings()->get('reportico', 'urlReportico');
-
-				$this->addButton($viewName, [
-					'action' => $urlReportico,
-					'color' => 'info',
-					'icon' => 'fas fa-archway',
-					'label' => 'adm-reportico',
-					'title' => 'open-new-pag',
-					'target' => '_blank',
-					'type' => 'link'
-				]);
 			}
 		};
     }
-
-	public function execAfterAction()
-	{
-		return function ($action) {
-			if ($action === 'ok-report') {
-				$model = $this->views[$this->active]->model;
-				$codes = $this->request->request->get('code', '');
-				if (empty($codes)) {
-
-					// no selected item
-					$this->toolBox()->i18nLog()->warning('no-selected-item');
-					
-				} elseif (\is_array($codes)) {
-
-					// detecting multiples rows
-					$numInformes = 0;
-					foreach ($codes as $cod) {
-						if ($model->loadFromCode($cod)) {
-							++$numInformes;
-							continue;
-						}
-					}
-					if ($numInformes != 1) {
-						$this->toolBox()->i18nlog()->warning('select-only-1-report');
-						
-					} elseif ($numInformes === 1) {
-						$urlReportico = $this->toolBox()->appSettings()->get('reportico', 'urlReportico');
-						$dirProjects = $this->getViewModelValue('ListReportico', 'dirProjects');
-						$file = $this->getViewModelValue('ListReportico', 'file');
-						
-						$id = 
-						( $urlReportico
-						. DIRECTORY_SEPARATOR
-						. ('index.php?option=com_reportico&printable_html=1&project=')
-						. $dirProjects
-						. ('&xmlin=')
-						. $file
-						. ('&execute_mode=PREPARE')
-						. ('&iddoc=')
-						. ((int) $this->request->query->get('code'))
-						);
-						$this->toolBox()->i18nLog()->info('external-link');
-						$this->toolBox()->i18nLog()->info("<a href='$id' target='_blank'> " . $file . " <i class='fas fa-external-link-alt'></i> </a>");
-					}
-				}
-				return false;
-			}
-		};
-	}
 }
