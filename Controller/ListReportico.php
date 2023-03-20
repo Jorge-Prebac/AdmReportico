@@ -34,13 +34,14 @@ class ListReportico extends ListController
      * @return array
      */
     public function getPageData(): array
-    {
-        $data = parent::getPageData();
-        $data['menu'] = 'reports';
-        $data['title'] = 'Reportico';
-        $data['icon'] = 'fas fa-archway';
-        return $data;
-    }
+	{
+		$data = parent::getPageData();
+		$data['menu'] = 'reports';
+		$data['submenu'] = 'adm-reportico';
+		$data['title'] = 'reports';
+		$data['icon'] = 'fas fa-archway';
+		return $data;
+	}
 
     protected function createViews()
     {
