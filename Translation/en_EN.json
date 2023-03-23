@@ -10,5 +10,6 @@
     "reportico": "Reportico",
     "select-only-1-report": "Select only 1 report",
     "summary-description": "Summary description of the report",
-    "url-to-reportico": "url to Reportico(http:\/\/WhatEver or https:\/\/WhatEver)"
+    "url-to-reportico": "url to Reportico(http:\/\/WhatEver or https:\/\/WhatEver)",
+    "view-not-supported": "View >>>%view%<<< is not supported"
 }

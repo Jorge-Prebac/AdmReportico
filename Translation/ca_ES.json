@@ -10,5 +10,6 @@
     "reportico": "Reportico",
     "select-only-1-report": "Selecciona només 1 informe",
     "summary-description": "Descripció resumida de l'informe",
-    "url-to-reportico": "url a Reportico (http:\/\/ElQueSigui o https:\/\/ElQueSigui)"
+    "url-to-reportico": "url a Reportico (http:\/\/ElQueSigui o https:\/\/ElQueSigui)",
+    "view-not-supported": "La Vista >>>%view%<<< no està soportada"
 }
