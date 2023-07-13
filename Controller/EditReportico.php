@@ -49,7 +49,7 @@ class EditReportico extends EditController
     {
         $data = parent::getPageData();
         $data['menu'] = 'reports';
-        $data['title'] = 'Reportico';
+        $data['title'] = 'reportico-reports';
         $data['icon'] = 'fas fa-archway';
         return $data;
     }

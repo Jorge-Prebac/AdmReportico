@@ -14,3 +14,5 @@ Plugin que te permite administrar tus informes para imprimir documentos o estad√
 ## Links Reportico
 - http://www.reportico.org
 - http://www.reportico.org/site2/release-6.0.0-beta
+- http://www.reportico.org/swsite/site/doc/reportico/tutorial_reportico.faq.pkg.html
+- http://www.reportico.org/reports8/examples

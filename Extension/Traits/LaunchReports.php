@@ -19,6 +19,7 @@
 namespace FacturaScripts\Plugins\AdmReportico\Extension\Traits;
 
 use Closure;
+use FacturaScripts\Core\Session;
 
 /**
  * Description of LaunchReports
@@ -30,8 +31,8 @@ use Closure;
 	protected function createViews(): Closure
     {
          return function() {
-			if ($this->user->can('ListReportico')) {
-				//el usuario tiene acceso
+			$user = Session::get('user');
+			if (!false == $user->can('ListReportico')) {
 				$this->createViewsAdmReportico();
 			}
 		};
@@ -47,13 +48,13 @@ use Closure;
 			switch ($typeView) {
 
 				case 'List':
-					$this->addView($viewName,'Reportico','Reportico','fas fa-archway');
+					$this->addView($viewName,'Reportico','reportico','fas fa-archway');
 					$this->addSearchFields($viewName, ['dirProjects', 'file', 'note', 'type']);
 					break;
 					
 				case 'Edit':
 				case 'main':
-					$this->addListView($viewName,'Reportico','Reportico','fas fa-archway');
+					$this->addListView($viewName,'Reportico','reportico','fas fa-archway');
 					$this->views[$viewName]->addSearchFields(['dirProjects', 'file', 'note', 'type']);
 					break;
 					

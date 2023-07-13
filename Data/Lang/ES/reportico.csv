@@ -2,4 +2,4 @@ id;dirProjects;file;note;type
 1;FacturaScripts;AnticiposPedidosCli;Diseño para entregar al cliente un comprobante del anticipo a cuenta del pedido;EditPedidoCliente
 2;FacturaScripts;PedidosClientes;Diseño para entregar al cliente un pedido de venta;EditPedidoCliente
 3;FacturaScripts;InterAnualPresupAcept;Diseño para obtener estadísticas de presupuestos aceptados. Por unidades, importes y con gráfica;ListPresupuestoCliente
-4;FacturaScripts;ProductosEntregados;Diseño para obtener estadísticas de productos entregados. Por importes y con gráfica;ListAlbaranCliente
+4;FacturaScripts;ProductosEntregados;Diseño para obtener estadísticas de productos entregados. Por importes, desglose por artículos y total acumulado por empresas. Con gráfica final;ListAlbaranCliente

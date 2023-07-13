@@ -48,7 +48,7 @@ class Reportico extends Base\ModelClass
 	/** @return string */
     public static function primaryColumn(): string
 	{
-        return 'id';
+        return 'file';
     }
     
 	/** @return string */

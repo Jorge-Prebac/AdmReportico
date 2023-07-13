@@ -38,7 +38,7 @@ class ListReportico extends ListController
 		$data = parent::getPageData();
 		$data['menu'] = 'reports';
 		$data['submenu'] = 'adm-reportico';
-		$data['title'] = 'reports';
+		$data['title'] = 'reportico-reports';
 		$data['icon'] = 'fas fa-archway';
 		return $data;
 	}
