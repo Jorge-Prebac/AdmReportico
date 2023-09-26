@@ -18,7 +18,7 @@
  */
 namespace FacturaScripts\Plugins\AdmReportico\Controller;
 
-use FacturaScripts\Core\Tools;  /// JLAH Añadido para usar Tools::log() ...
+use FacturaScripts\Core\Tools;
 use FacturaScripts\Core\Lib\ExtendedController\ListController;
 
 /**
@@ -63,7 +63,6 @@ class ListReportico extends ListController
 			$this->setSettings($viewName, 'clickable', false);
 		}
 
-		//$urlReportico = $this->toolBox()->appSettings()->get('reportico', 'urlReportico');
 		$urlReportico = Tools::settings('reportico', 'urlReportico');
 
 		$this->addButton($viewName, [

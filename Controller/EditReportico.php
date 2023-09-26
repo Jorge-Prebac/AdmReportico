@@ -19,7 +19,7 @@
  */
 namespace FacturaScripts\Plugins\AdmReportico\Controller;
 
-use FacturaScripts\Core\Tools;  /// JLAH Añadido para usar Tools::log() ...
+use FacturaScripts\Core\Tools;
 use FacturaScripts\Core\Base\DataBase\DataBaseWhere;
 use FacturaScripts\Core\Lib\ExtendedController\EditController;
 use FacturaScripts\Core\Model\User;
@@ -75,8 +75,7 @@ class EditReportico extends EditController
                 parent::loadData($viewName, $view);
                 break;
         }
-		
-		//$urlReportico = $this->toolBox()->appSettings()->get('reportico', 'urlReportico');
+
 		$urlReportico = Tools::settings('reportico', 'urlReportico');
 
 		$this->addButton($viewName, [
