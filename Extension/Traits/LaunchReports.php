@@ -20,6 +20,7 @@ namespace FacturaScripts\Plugins\AdmReportico\Extension\Traits;
 
 use Closure;
 use FacturaScripts\Core\Session;
+use FacturaScripts\Core\Tools;
 
 /**
  * Description of LaunchReports
@@ -59,7 +60,7 @@ use FacturaScripts\Core\Session;
 					break;
 					
 				default:
-					$this->toolBox()->i18nlog()->warning('view-not-supported', ['%view%' =>$view]);
+					Tools::log()->warning('view-not-supported', ['%view%' =>$view]);
 					return;
 			}
 
@@ -78,7 +79,7 @@ use FacturaScripts\Core\Session;
 					'type' => 'action'
 			]);
 
-			$urlReportico = $this->toolBox()->appSettings()->get('reportico', 'urlReportico');
+			$urlReportico = Tools::settings('reportico', 'urlReportico');
 
 			$this->addButton($viewName, [
 					'action' => $urlReportico,
@@ -101,7 +102,7 @@ use FacturaScripts\Core\Session;
 				if (empty($codes)) {
 
 					// no selected item
-					$this->toolBox()->i18nLog()->warning('no-selected-item');
+					Tools::log()->warning('no-selected-item');
 
 				} elseif (\is_array($codes)) {
 
@@ -114,10 +115,10 @@ use FacturaScripts\Core\Session;
 						}
 					}
 					if ($numInformes != 1) {
-						$this->toolBox()->i18nlog()->warning('select-only-1-report');
+						Tools::log()->warning('select-only-1-report');
 
 					} elseif ($numInformes === 1) {
-						$urlReportico = $this->toolBox()->appSettings()->get('reportico', 'urlReportico');
+						$urlReportico = Tools::settings('reportico', 'urlReportico');
 						$dirProjects = $this->getViewModelValue('ListReportico', 'dirProjects');
 						$file = $this->getViewModelValue('ListReportico', 'file');
 
@@ -132,8 +133,9 @@ use FacturaScripts\Core\Session;
 						. ('&iddoc=')
 						. ((int) $this->request->query->get('code'))
 						);
-						$this->toolBox()->i18nLog()->info('external-link');
-						$this->toolBox()->i18nLog()->info("<a href='$id' target='_blank'> " . $file . " <i class='fas fa-external-link-alt'></i> </a>");
+
+						Tools::log()->info('external-link');
+						Tools::log()->info("<a href='$id' target='_blank'> " . $file . " <i class='fas fa-external-link-alt'></i> </a>");
 					}
 				}
 				return false;
