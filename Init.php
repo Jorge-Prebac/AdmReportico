@@ -37,17 +37,19 @@ class Init extends InitClass
 		$this->loadExtension(new Extension\Controller\ListAlbaranCliente());
     }
 	
-	public function update()
+    public function update()
     {
-		;
+        $this->setupSettings();
     }
-	
-	private function setupSettings()
+
+    private function setupSettings()
     {
-        $appsettings = $this->toolBox()->appSettings();
-        $urlReportico = $appsettings->get('admreportico', 'urlReportico');
 		
-        $appsettings->set('admreportico', 'urlReportico', $urlReportico);
-        $appsettings->save();
+		$appsettings = $this->toolBox()->appSettings();
+        if (empty($appsettings->get('reportico', 'urlReportico'))) {
+            $appsettings->set('reportico', 'urlReportico', 'http://localhost//reportico6016/');
+        }
+
+		$appsettings->save();
     }
 }
