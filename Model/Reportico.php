@@ -64,13 +64,12 @@ class Reportico extends Base\ModelClass
 	
 	public function save(): bool
     {
-
-        // Save audit log
-        $this->saveAuditMessage('updated-model');
-
         if (false === parent::save()) {
             return false;
         }
+
+        // Save audit log
+        $this->saveAuditMessage('updated-model');
 
 		return true;
     }
