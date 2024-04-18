@@ -18,6 +18,7 @@
  */
 namespace FacturaScripts\Plugins\AdmReportico\Model;
 
+use FacturaScripts\Core\Tools;
 use FacturaScripts\Core\App\AppSettings;
 use FacturaScripts\Core\Model\Base;
 
@@ -88,7 +89,7 @@ class Reportico extends Base\ModelClass
 
 	protected function saveAuditMessage(string $message)
     {
-        self::toolBox()::i18nLog(self::AUDIT_CHANNEL)->info($message, [
+        Tools::log(self::AUDIT_CHANNEL)->info($message, [
             '%model%' => $this->modelClassName(),
             '%key%' => $this->primaryColumnValue(),
             '%desc%' => $this->primaryDescription(),

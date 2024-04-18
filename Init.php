@@ -18,6 +18,7 @@
  */
 namespace FacturaScripts\Plugins\AdmReportico;
 
+use FacturaScripts\Core\Tools;
 use FacturaScripts\Core\Base\DataBase;
 use FacturaScripts\Core\Base\InitClass;
 use FacturaScripts\Dinamic\Model\Cliente;
@@ -44,12 +45,9 @@ class Init extends InitClass
 
     private function setupSettings()
     {
-		
-		$appsettings = $this->toolBox()->appSettings();
-        if (empty($appsettings->get('reportico', 'urlReportico'))) {
-            $appsettings->set('reportico', 'urlReportico', 'http://localhost//reportico6016/');
+        if (empty(Tools::settings('reportico', 'urlReportico'))) {
+            Tools::settingsSet('reportico', 'urlReportico', 'http://localhost//reportico6016/');
         }
-
-		$appsettings->save();
+		Tools::settingsSave();
     }
 }
