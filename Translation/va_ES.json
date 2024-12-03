@@ -7,10 +7,10 @@
     "open-new-pag": "Reportico s'obrirà en una nova pàgina del navegador",
     "organize-reports": "Ens ajuda a organitzar els informes en diferents projectes",
     "report-file": "Arxiu de l'informe en format XML",
-    "reportico": "R",
-    "reportico-reports": "I",
+    "reportico": "Reportico",
+    "reportico-reports": "Informes Reportico",
     "select-only-1-report": "Seleccioneu només 1 informe",
     "summary-description": "Descripció resumida de l'informe",
-    "url-to-reportico": "url a Reportico (http:\/\/LoQueSea ó https:\/\/LoQueSea)",
+    "url-to-reportico": "url a Reportico (http:\/\/LoQueSea o https:\/\/LoQueSea)",
     "view-not-supported": "La Vista >>>%view%<<< no està suportada"
 }

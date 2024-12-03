@@ -1,16 +1,16 @@
 {
     "adm-reportico": "AdmReportico",
-    "controller-report-launched": "Controlador desde donde se lanzará el informe",
-    "dir-projects": "dir proyectos",
-    "external-link": "Haz Clic y el informe se abrirá en una nueva página del navegador",
-    "ok-report": "Ok Informe",
-    "open-new-pag": "Reportico se abrirá en una nueva página del navegador",
-    "organize-reports": "Nos ayuda a organizar los informes en diferentes proyectos",
-    "report-file": "Archivo del informe en formato XML",
+    "controller-report-launched": "Controller von dem aus der Bericht gestartet wird",
+    "dir-projects": "Verzeichnis Projekte",
+    "external-link": "Klicken Sie hier, und der Bericht wird in einem neuen Browserfenster geöffnet",
+    "ok-report": "OK Bericht",
+    "open-new-pag": "Reportico wird in einem neuen Browser-Tab geöffnet",
+    "organize-reports": "Hilft uns, Berichte in verschiedenen Projekten zu organisieren",
+    "report-file": "Berichtsdatei im XML-Format",
     "reportico": "Reportico",
-    "reportico-reports": "Informes Reportico",
-    "select-only-1-report": "Selecciona solo 1 informe",
-    "summary-description": "Descripción resumida del informe",
-    "url-to-reportico": "url a Reportico (http:\/\/LoQueSea ó https:\/\/LoQueSea)",
-    "view-not-supported": "La Vista >>>%view%<<< no está soportada"
+    "reportico-reports": "Reportico-Berichte",
+    "select-only-1-report": "Wählen Sie nur 1 Bericht aus",
+    "summary-description": "Zusammenfassende Beschreibung des Berichts",
+    "url-to-reportico": "URL zu Reportico (http:\/\/LoQueSea oder https:\/\/LoQueSea)",
+    "view-not-supported": "Die Ansicht >>>%view%<<< wird nicht unterstützt"
 }
