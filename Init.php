@@ -20,30 +20,33 @@ namespace FacturaScripts\Plugins\AdmReportico;
 
 use FacturaScripts\Core\Tools;
 use FacturaScripts\Core\Base\DataBase;
-use FacturaScripts\Core\Base\InitClass;
-use FacturaScripts\Dinamic\Model\Cliente;
+use FacturaScripts\Core\Template\InitClass;
 
 /**
  * Description of Init of AdmReportico
  *
  * @author Jorge-Prebac <info@prebac.com>
  */
-class Init extends InitClass
+final class Init extends InitClass
 {
 
-    public function init()
+    public function init(): void
     {
 		$this->loadExtension(new Extension\Controller\EditPedidoCliente());
 		$this->loadExtension(new Extension\Controller\ListPresupuestoCliente());
 		$this->loadExtension(new Extension\Controller\ListAlbaranCliente());
     }
-	
-    public function update()
+
+	public function uninstall(): void 
+	{
+	}
+
+    public function update(): void
     {
         $this->setupSettings();
     }
 
-    private function setupSettings()
+    private function setupSettings(): void
     {
         if (empty(Tools::settings('reportico', 'urlReportico'))) {
             Tools::settingsSet('reportico', 'urlReportico', 'http://localhost//reportico6016/');

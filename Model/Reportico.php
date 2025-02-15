@@ -19,7 +19,6 @@
 namespace FacturaScripts\Plugins\AdmReportico\Model;
 
 use FacturaScripts\Core\Tools;
-use FacturaScripts\Core\App\AppSettings;
 use FacturaScripts\Core\Model\Base;
 
 /**
